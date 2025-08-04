@@ -29,6 +29,7 @@ float precioProd2 = 45.78f;
 double  montoIVA = 0.21;
 
 double totalConIva = (precioProd1 + precioProd2) * (1 + montoIVA);
+Console.WriteLine($"El monto total de los dos productos incluyendo IVA es {totalConIva}");
 
 // b) En base a la siguiente variable -> int ingresoAnual = 1500;
 //    Hacer otra variable que represente el ingreso mensual y mostrarla por consola.
@@ -36,11 +37,21 @@ int ingresoAnual = 1500;
 int cantMeses = 12;
 
 double ingresoMensual = ingresoAnual / cantMeses;
+Console.WriteLine($"El ingreso mensual es de ${ingresoMensual}");
 
 // c) Crear una variable que represente si el ingreso anual es mayor a 1000 o no.
+bool ingresoMayor1000 = ingresoAnual > 1000;
+Console.WriteLine($"Ingreso anual mayor a 1000?: {ingresoMayor1000}");
+
 
 // d) Calcular cuánto gana una empresa por mes si su ingreso anual es 1500
 //    y tiene que pagar 12% de impuestos al estado.
+int ingresoEmpresa = 1500;
+double impuestos = 0.12;
+
+double gananciaEmpresa = ingresoEmpresa - ingresoEmpresa* impuestos;
+double gananciaMensualEmpresa = gananciaEmpresa / cantMeses;
+Console.WriteLine($"Una empresa con un ingreso de $1500, luego de haber pagado los impuestos (12%) obtiene una ganancia de ${gananciaMensualEmpresa}. El monto de impuestos a pagar será");
 
 
 // ==========================
@@ -52,20 +63,101 @@ double ingresoMensual = ingresoAnual / cantMeses;
 //     - Si tiene Entre 11 y 50 → "Pyme"
 //     - Si tiene más de 50 → "Big"
 
+int numeroEmpleados = 34;
+Console.WriteLine($"La empresa cuenta con {numeroEmpleados} empleados");
+
+if(numeroEmpleados <= 10)
+{
+    Console.WriteLine("Startup");
+}
+else if (numeroEmpleados <= 50)
+{
+    Console.WriteLine("Pyme");
+}
+else
+{
+    Console.WriteLine("Big");
+}
+
 // b) En base al monto de inversión de una empresa, clasificar la inversión como:
 //     - Si es menor a 10,000 → "Baja"
 //     - Si está entre 10,000 y 100,000 → "Media"
 //     - Si es mayor a 100,000 → "Alta"
 
+double montoInversion = 50000;
+Console.WriteLine($"El monto de la inversión es de ${montoInversion}");
+
+if (montoInversion < 10000)
+{
+    Console.WriteLine("Se trata de una inversión baja");
+}
+else if (montoInversion <= 100000)
+{
+    Console.WriteLine("Se trata de una inversión media");
+}
+else
+{
+    Console.WriteLine("Se trata de una inversión alta");
+}
+
 // c) Según el tipo de cliente ("mayorista" o "minorista"), mostrar el precio final de un producto con descuento si corresponde:
 //     - Si es mayorista → 20% de descuento
 //     - Si es minorista → precio completo
+
+string tipoCliente = "mayorista";
+double precioProducto = 450.50;
+double precioFinal;
+
+if (tipoCliente == "mayorista")
+{
+    precioFinal = precioProducto - precioProducto * 0.2;
+}
+else
+{
+    precioFinal = precioProducto;
+}
+
+// c.2)Según el tipo de cliente ("mayorista" o "minorista"), mostrar el precio final de un producto con descuento si corresponde:
+//     - Si es mayorista → 20% de descuento
+//     - Si es minorista → 50% de descuento
+//     - Si es cliente final → 80% de descuento
+
+switch (tipoCliente)
+{
+    case "mayorista":
+        Console.WriteLine("El cliente tiene 20% de descuento");
+        break;
+    case "minorista":
+        Console.WriteLine("El cliente tiene 50% de descuento");
+        break;
+    case "cliente final":
+        Console.WriteLine("El cliente tiene 80% de descuento");
+        break;
+    default:
+        Console.WriteLine("Tipo de cliente no encontrado");
+        break;
+}
 
 // d) Una distribuidora tiene 20 unidades de cerveza en stock. Un cliente solicita 25 unidades.
 //    Verificar si hay suficiente stock para concretar la venta:
 //     - Si alcanza, mostrar por consola: "Venta confirmada. Cervezas en stock suficientes."
 //     - Si no alcanza, mostrar: "No hay suficientes cervezas en stock. Faltan X unidades."
 //       (donde X debe calcularse dinámicamente en base a las variables)
+
+int stockCerveza = 20;
+int pedidoCerveza = 15;
+
+if (pedidoCerveza <= stockCerveza)
+{
+    stockCerveza -= pedidoCerveza;
+    Console.WriteLine("Venta confirmada. Cervezas en stock suficientes.");
+    Console.WriteLine($"Quedan {stockCerveza} cervezas en stock");
+}
+else
+{
+    int faltanteStock = pedidoCerveza - stockCerveza;
+    Console.WriteLine($"No hay suficientes cervezas en stock. Faltan {faltanteStock} unidades.");
+}
 
 
 // ==========
