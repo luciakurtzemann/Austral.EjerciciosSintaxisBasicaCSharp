@@ -3,22 +3,39 @@
 // =====================
 
 // a) Declarar una variable con el nombre de una empresa y mostrarla por consola.
+using System.Runtime.CompilerServices;
+
+string nombreEmpresa = "Austral";
+Console.WriteLine(nombreEmpresa);
 
 // b) Declarar una variable con la cantidad de empleados y mostrarla por consola.
+int cantEmpleados = 256;
+Console.WriteLine(cantEmpleados);
 
 // c) Declarar una variable decimal con el ingreso mensual estimado.
+double ingresoEstimado = 987567.87;
+Console.WriteLine(ingresoEstimado);
 
 // d) Mostrar por consola un mensaje que diga el nombre de la empresa, cantidad e empleados e ingreso.
-
+Console.WriteLine($"En la empresa {nombreEmpresa} hay actualmente {cantEmpleados} con un ingreso estimado de ${ingresoEstimado}.");
 
 // ==============
 // 2. Operadores
 // ==============
 
 // a) Declarar dos precios de productos y calcular el total de los dos con IVA.
+double precioProd1 = 12.34;
+float precioProd2 = 45.78f;
+double  montoIVA = 0.21;
+
+double totalConIva = (precioProd1 + precioProd2) * (1 + montoIVA);
 
 // b) En base a la siguiente variable -> int ingresoAnual = 1500;
 //    Hacer otra variable que represente el ingreso mensual y mostrarla por consola.
+int ingresoAnual = 1500;
+int cantMeses = 12;
+
+double ingresoMensual = ingresoAnual / cantMeses;
 
 // c) Crear una variable que represente si el ingreso anual es mayor a 1000 o no.
 
