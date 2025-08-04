@@ -8,13 +8,16 @@ using System.Runtime.CompilerServices;
 string nombreEmpresa = "Austral";
 Console.WriteLine(nombreEmpresa);
 
+
 // b) Declarar una variable con la cantidad de empleados y mostrarla por consola.
 int cantEmpleados = 256;
 Console.WriteLine(cantEmpleados);
 
+
 // c) Declarar una variable decimal con el ingreso mensual estimado.
 double ingresoEstimado = 987567.87;
 Console.WriteLine(ingresoEstimado);
+
 
 // d) Mostrar por consola un mensaje que diga el nombre de la empresa, cantidad e empleados e ingreso.
 Console.WriteLine($"En la empresa {nombreEmpresa} hay actualmente {cantEmpleados} con un ingreso estimado de ${ingresoEstimado}.");
@@ -31,6 +34,7 @@ double  montoIVA = 0.21;
 double totalConIva = (precioProd1 + precioProd2) * (1 + montoIVA);
 Console.WriteLine($"El monto total de los dos productos incluyendo IVA es {totalConIva}");
 
+
 // b) En base a la siguiente variable -> int ingresoAnual = 1500;
 //    Hacer otra variable que represente el ingreso mensual y mostrarla por consola.
 int ingresoAnual = 1500;
@@ -38,6 +42,7 @@ int cantMeses = 12;
 
 double ingresoMensual = ingresoAnual / cantMeses;
 Console.WriteLine($"El ingreso mensual es de ${ingresoMensual}");
+
 
 // c) Crear una variable que represente si el ingreso anual es mayor a 1000 o no.
 bool ingresoMayor1000 = ingresoAnual > 1000;
@@ -79,6 +84,7 @@ else
     Console.WriteLine("Big");
 }
 
+
 // b) En base al monto de inversión de una empresa, clasificar la inversión como:
 //     - Si es menor a 10,000 → "Baja"
 //     - Si está entre 10,000 y 100,000 → "Media"
@@ -100,6 +106,7 @@ else
     Console.WriteLine("Se trata de una inversión alta");
 }
 
+
 // c) Según el tipo de cliente ("mayorista" o "minorista"), mostrar el precio final de un producto con descuento si corresponde:
 //     - Si es mayorista → 20% de descuento
 //     - Si es minorista → precio completo
@@ -116,6 +123,7 @@ else
 {
     precioFinal = precioProducto;
 }
+
 
 // c.2)Según el tipo de cliente ("mayorista" o "minorista"), mostrar el precio final de un producto con descuento si corresponde:
 //     - Si es mayorista → 20% de descuento
@@ -137,6 +145,7 @@ switch (tipoCliente)
         Console.WriteLine("Tipo de cliente no encontrado");
         break;
 }
+
 
 // d) Una distribuidora tiene 20 unidades de cerveza en stock. Un cliente solicita 25 unidades.
 //    Verificar si hay suficiente stock para concretar la venta:
@@ -165,14 +174,75 @@ else
 // ==========
 
 // a) Mostrar los primeros 10 números naturales usando un for.
+for (int i = 1; i<=10; i++)
+{
+    Console.WriteLine(i);
+}
+
 
 // b) Dado este array que representa las ventas de una empresa:
 //    int[] ventasMensuales = { 1000, 1200, 950, 1100 };
 //    Sumar las ventas mensuales con un foreach y mostrar el total por consola.
+int[] ventasMensuales = { 1000, 1200, 950, 1100 };
+int totalVentasMensuales = 0;
+
+foreach(var venta in ventasMensuales)
+{
+    totalVentasMensuales += venta;
+}
+
+Console.WriteLine($"El total de ventas mensuales es ${totalVentasMensuales}");
+
 
 // c) Hacer una cuenta regresiva del 5 al 1 con while.
+int contador = 5;
+
+while (contador > 0)
+{
+    Console.WriteLine(contador);
+    contador--;
+}
+
+
+// c.2) Hacer una cuenta regresiva del 5 al 1 con for.
+for (int i = 5; i>0; i--)
+{
+    Console.WriteLine(i);
+}
+
 
 // d) Simular un login: pedir usuario hasta que ingrese "admin" con do-while.
+var usuario = "";
+
+do
+{
+    Console.WriteLine("Ingrese su usuario:");
+    usuario = Console.ReadLine();
+} while (usuario != "admin");
+Console.WriteLine("Usted ha ingresado como admin");
+
+
+// d.2) Simular un login: pedir usuario hasta que ingrese "admin" con do-while.
+//var usuario = "";
+int intentosPermitidos = 5;
+int intentos = 0;
+
+do
+{
+    Console.WriteLine("Ingrese su usuario:");
+    usuario = Console.ReadLine();
+    intentos++;
+} while (usuario != "admin" && intentos < intentosPermitidos);
+
+if(intentos >= intentosPermitidos)
+{
+    Console.WriteLine("Ha llegado al número máximo de intentos permitidos.");
+}
+else
+{
+    Console.WriteLine("Usted ha ingresado como admin.");
+}
+
 
 
 // =============
